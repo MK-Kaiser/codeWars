@@ -1,20 +1,26 @@
-def find_it(seq, iteration=0, count=dict(), previous=None, current=None):
+def find_it(seq):
+    count = dict()
+    iteration = 0
+    current = seq[0]
+    previous = None
+    return rec_find(seq, iteration, count, current, previous)
+
+def rec_find(seq, iteration, count, current, previous):
     if iteration != len(seq):
         current = seq[iteration]
         if current not in count.keys():
             count[current] = 1
         elif current in count.keys():
             count[current] = count.get(current, 0) + 1
-
         previous = current
-        return find_it(seq, iteration+1, count, previous, current)
+        return rec_find(seq, iteration + 1, count, current, previous)
     else:
         return find_odd_int(count)
-    
+
+
 def find_odd_int(odd_ints):
     for i in odd_ints.items():
-        if i[1] %2 != 0:
-            print(i[0])
+        if i[1] % 2 != 0:
             return i[0]
         
 
