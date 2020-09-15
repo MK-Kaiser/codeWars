@@ -1,0 +1,1 @@
+# codeWars challenge solutions
