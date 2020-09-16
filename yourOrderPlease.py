@@ -18,7 +18,7 @@ def order(sentence):
     if sentence == "":
         return ""
     else:
-        for i in range(1,9):
+        for i in range(1,10):
             for word in sentence.split():
                 if str(i) in word:
                     new_sentence += word
